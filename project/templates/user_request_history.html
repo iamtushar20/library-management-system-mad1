@@ -1,0 +1,43 @@
+{% extends 'user_base.html'%}
+
+
+{% block title %}
+   Issue History
+{% endblock %}
+
+
+{% block content %}
+
+<h2 style="text-align: center;">Book Issue History</h2>
+
+
+<table class="table">
+   <thead>
+      <tr>
+         
+         <th>Book Name</th>
+         <th>Authors</th>
+         <th>Request Date</th>
+         <th>Return Date </th>
+         <th> Status </th>
+            
+      </tr>
+   </thead>
+
+   <tbody>
+      {% for req in book_issue %}
+      <tr>
+       
+         
+         <td>{{req.book_name}}</td>
+         <td>{{req.book_author}}</td>
+         <td>{{req.issue_date}}</td>
+         <td>{{req.return_date}}</td>
+         <td>{{req.approved}}</td>
+ 
+      </tr>
+      {% endfor %}
+   </tbody>
+</table>
+
+{% endblock%}

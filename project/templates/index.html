@@ -1,0 +1,81 @@
+{% extends 'user_base.html' %}
+
+{% block title %}
+    Home
+
+{% endblock %}
+
+{% block content %}
+    {% include 'search.html' with context %}
+    <h3>Welcome</h3>
+    <p>Explore our collection of books and manage your library account.</p>
+    
+    <div class="sections-list">
+    {% for section in sections %}
+        <h2 style="text-align: center;">{{ section.name }}</h2>
+        <div class="books">
+            <div class="container">
+                <div class="row">
+                    {% for book in section.books %}
+                        {% if (param == 'book_name' and book_name.lower() in book.name.lower())  %}
+                    
+
+                            
+                                <div class="card col-md-3 mx-2 my-2">
+                                    <img src="{{url_for('static', filename='images/pexels-thought-catalog-2228557.jpg')}}" class="card-img-top" alt="{{ book.name }}" width="150" height="200">
+                                    <div class="card-body">
+                                        <h5 class="care-title">{{ book.name }}</h5>
+                                        <p class="card-text">{{ book.authors }}</p>
+                                        <a href="{{ url_for('book_request', book_id=book.id) }}" class="btn btn-primary">Request</a>
+                                        <a href="{{ url_for('book_payment', book_id=book.id) }}" class="btn btn-success">Buy</a>
+                                    </div>
+                                </div>
+                        {% elif param == 'author_name' and author_name.lower() in book.authors.lower() %}
+                                <div class="card col-md-3 mx-2 my-2">
+                                    <img src="{{url_for('static', filename='images/pexels-thought-catalog-2228557.jpg')}}" class="card-img-top" alt="{{ book.name }}" width="150" height="200">
+                                    <div class="card-body">
+                                        <h5 class="care-title">{{ book.name }}</h5>
+                                        <p class="card-text">{{ book.authors }}</p>
+                                        <a href="{{ url_for('book_request', book_id=book.id) }}" class="btn btn-primary">Request</a>
+                                        <a href="{{ url_for('book_payment', book_id=book.id) }}" class="btn btn-success">Buy</a>
+                                    </div>
+                                </div>
+
+                        {% elif param != 'book_name' and param != 'author_name' %}
+                                <div class="card col-md-3 mx-2 my-2">
+                                    <img src="{{url_for('static', filename='images/pexels-thought-catalog-2228557.jpg')}}" class="card-img-top" alt="{{ book.name }}" width="150" height="200">
+                                    <div class="card-body">
+                                        <h5 class="care-title">{{ book.name }}</h5>
+                                        <p class="card-text">{{ book.authors }}</p>
+                                        <a href="{{ url_for('book_request', book_id=book.id) }}" class="btn btn-primary">Request</a>
+                                        <a href="{{ url_for('book_payment', book_id=book.id) }}" class="btn btn-success">Buy</a>
+                                    </div>
+                                </div>
+                        
+                    
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+
+            
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+<style>
+
+
+    .books {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+ 
+</style>

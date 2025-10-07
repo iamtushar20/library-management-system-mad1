@@ -1,0 +1,41 @@
+{% extends 'admin_base.html'%}
+
+
+{% block title %}
+   Book Status
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1>Book Status of  "{{ name }}"</h1><br>
+    
+    
+    
+
+      <table class="table">
+         <thead>
+            <tr>
+               <th>User Name</th>
+               <th>Issue Date</th>
+               <th>Return Date</th>
+                
+            </tr>
+         </thead>
+      
+         <tbody>
+            {% for user in users_issued %}
+        
+            <tr>
+               <td>{{ user[0] }}</td>
+               <td>{{ user[1] }}</td>
+               <td>{{ user[2] }}</td>
+               
+            </tr>
+            {% endfor %}
+           
+         </tbody>
+      </table>
+
+{% endblock%}
