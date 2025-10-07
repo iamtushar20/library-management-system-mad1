@@ -1,0 +1,26 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}
+    Delete Book
+
+{% endblock %}
+
+{% block content %}
+    <h1>Delete Book </h1>
+
+    <p>Are you sure you want to delete <b>{{book.name}}</b></p>
+
+    <div class="form-group">
+
+        
+        <form action="" method="post" class="form">
+            <button type="submit" class="btn btn-danger">
+            
+                Delete
+            </button>
+        </form>
+
+    </div>
+
+
+    {% endblock %}
