@@ -1,6 +1,6 @@
-# Online Library Management System
+# Library Management System
 
-An **Online Library Management System** built with **Flask**, allowing admins to manage library sections and books, while users can browse, request, and purchase books. The application includes a responsive dashboard with analytics, interactive charts, and user-friendly features.
+An **Library Management System** built with **Flask**, allowing admins to manage library sections and books, while users can browse, request, and purchase books. The application includes a responsive dashboard with analytics, interactive charts, and user-friendly features.
 
 [Watch Demo Video](https://youtu.be/CwYJEzy__9k)
 
