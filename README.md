@@ -103,8 +103,3 @@ An **Library Management System** built with **Flask**, allowing admins to manage
 - **Pie Chart:** Distribution of books in each section  
 
 ---
-
-## Installation
-1. Clone the repository:  
-   ```bash
-   git clone <repository-url>
